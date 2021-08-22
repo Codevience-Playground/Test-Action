@@ -1,0 +1,16 @@
+name: 'CR: Commentator Pytest Coverage'
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the commit
+      uses: actions/checkout@master
+      with:
+          submodules: 'recursive'
+          fetch-depth: 0
+    
+    - name: Use Non-ascii check
+      uses: Codevience-Playground/actions-check-non-ascii@master
